@@ -72,4 +72,65 @@ const technicalArticles = {
             </section>
         `
     },
-    
+     "2": {
+        title: "The Single JavaScript Skill That Separates Juniors from Seniors",
+        metaDescription: "Mastering the event loop, execution stack, and runtime mechanics.",
+        date: "Jan 22, 2025",
+        readTime: "12 min read",
+        level: "Intermediate to Advanced",
+        toc: [
+            { anchor: "#eventloop", label: "The Event Loop" },
+            { anchor: "#confusion", label: "Async Confusion" },
+            { anchor: "#mechanics", label: "Microtasks" }
+        ],
+        bodyHtml: `
+            <header class="article-header">
+                <h1>The Single JavaScript Skill That Separates Juniors from Seniors</h1>
+                <div class="article-meta-full">
+                    <span>📅 Jan 22, 2025</span>
+                    <span class="reading-time">12 min read</span>
+                    <span>✍️ Intermediate to Advanced</span>
+                </div>
+            </header>
+            <section>
+                <h2 id="eventloop">The Fallacy of 'Magic' Frameworks</h2>
+                <p>Junior engineers run straight to modern web UI libraries or framework tools. Senior engineers master the underlying single-threaded execution context of the browser runtime itself. Understanding the Call Stack, Macro-task engine queue, and Web APIs transforms your debugging capabilities entirely.</p>
+                
+                <h2 id="confusion">Real Examples of Async/Await Confusion</h2>
+                <p>Many developers assume that calling <code>async/await</code> transforms synchronous blocking sequences into magic concurrent operations running threads in the background. In reality, it is purely cleaner syntax formatting built to handle non-blocking asynchronous events natively.</p>
+                <pre><code>console.log('Start');
+setTimeout(() => console.log('Timeout'), 0);
+Promise.resolve().then(() => console.log('Promise'));
+console.log('End');</code></pre>
+                <p>A junior engineer struggles to map out the exact code sequence printed here. A senior knows the native engine structure prioritizes micro-task executions (Promises) above general structural timelines (setTimeout) every single run.</p>
+                <p>Output:</p>
+                <pre><code>Start
+End
+Promise
+Timeout</code></pre>
+                <p>Why? Because:</p>
+                <ol style="color: #555; line-height: 1.8;">
+                    <li>Synchronous code runs first (Start, End)</li>
+                    <li>Microtasks (Promises) run after synchronous, before macrotasks</li>
+                    <li>Macrotasks (setTimeout) run last</li>
+                </ol>
+ 
+                <h2 id="mechanics">Understanding the Microtask Queue</h2>
+                <p>When you master the underlying mechanics of how engine ticks operate, your architecture becomes clean, resilient, and ready to digest massive amounts of real-time application events without choking UI interactions.</p>
+                <blockquote>The event loop is not magic. It's a predictable, well-defined sequence. Master it, and debugging becomes deduction.</blockquote>
+                <p>Learn this ONE thing, and you'll debug async problems 10x faster than your peers.</p>
+            </section>
+        `
+    },
+    "3": {
+        title: "I Built 5 Projects in 6 Months. Here's What Broke Me",
+        metaDescription: "A personal retrospective on portfolio strategy vs shallow production shipping.",
+        date: "Dec 05, 2024",
+        readTime: "10 min read",
+        level: "Beginner to Intermediate",
+        toc: [
+            { anchor: "#burnout", label: "The Grind Trap" },
+            { anchor: "#failures", label: "What Actually Broke" },
+            { anchor: "#refactor", label: "The True Lesson" }
+        ],
+        
