@@ -1,0 +1,310 @@
+/* ================ 
+    GLOBAL RESETS & GRID ROOT 
+   ================ */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    grid-template-rows: 1em auto auto auto 1em; /* Controls structural spacing */
+    grid-template-areas:
+        ".    .    ." 
+        ".   head  ."
+        ".   main  ."
+        ".   foot  ."
+        ".    .    .";
+    gap: 1em 0; /* Vertical grid row spacing only */
+    background: #fafafa;
+}
+
+/* ================ 
+    STRUCTURAL SECTIONS 
+   ================ */
+.site-header {
+    grid-area: head;
+    text-align: center;
+    padding: 2em 0;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas: "blog sidebar";     
+}
+
+#articles-grid {
+    grid-area: blog;
+    display: grid;
+    gap: 2.5em;
+    grid-template-columns: 1fr;
+}
+
+.blog-sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 2em;
+    height: fit-content;
+}
+
+footer {
+    grid-area: foot;
+    padding-top: 2em;
+    border-top: 1px solid #e0e0e0;
+    color: #7c7c7c;
+    text-align: center;
+}
+
+/* ================ 
+    TYPOGRAPHY BASELINES 
+   ================ */
+h1, h2, h3 {
+    color: #0F0F0F; 
+    font-weight: 700;
+}
+
+.site-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.site-header p {
+    color: #7c7c7c;
+    font-size: 1.1rem;
+    margin: 0.5em 0 0 0;
+}
+
+p {
+    margin: 1em 0;
+    font-size: 1rem;
+    color: #7c7c7c;
+}
+
+a {
+    text-decoration: none;
+    color: #5D0E50;
+    transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+    color: #000;
+}
+
+a:focus {
+    outline: 2px solid #5D0E50;
+    outline-offset: 2px;
+    border-radius: 0.2em;
+}
+
+footer p {
+    margin: 0.5em 0;
+    font-size: 0.95rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ================ 
+    DYNAMIC PREVIEW CARDS (Injected by JS) 
+   ================ */
+article.article-preview {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5em;
+    padding: 2em;
+    transition: box-shadow 0.2s ease;
+}
+
+article.article-preview:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.article-meta {
+    display: flex;
+    gap: 1em;
+    font-size: 0.9rem;
+    color: #7c7c7c;
+    margin-bottom: 1em;
+}
+
+.article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.article-preview h2 {
+    font-size: 1.75rem;
+    margin: 0.5em 0;
+    line-height: 1.3;
+}
+
+.article-preview p {
+    color: #7c7c7c;
+    margin: 1em 0;
+    font-size: 1rem;
+}
+
+.read-more {
+    color: #5D0E50;
+    font-weight: 600;
+}
+
+/* ================ 
+    SIDEBAR NAVIGATION WIDGET 
+   ================ */
+.toc-widget {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5em;
+    padding: 1.5em;
+}
+
+.toc-widget h3 {
+    font-size: 1rem;
+    margin: 0 0 1em 0;
+}
+
+#sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar-menu li {
+    margin: 0.5em 0;
+}
+
+#sidebar-menu a {
+    color: #5D0E50;
+    font-size: 0.95rem;
+}
+
+/* ================ 
+    FULL ARTICLE PAGE DEEP TYPOGRAPHY 
+   ================ */
+.full-article .article-header {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.full-article .article-header h1 {
+    font-size: 2.5rem;
+    margin: 0.5em 0;
+    line-height: 1.2;
+}
+
+.full-article .article-meta-full {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    color: #7c7c7c;
+    font-size: 0.95rem;
+    margin-top: 1em;
+}
+
+.full-article .article-meta-full span {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.full-article .reading-time {
+    background: #f0f0f0;
+    padding: 0.4em 0.8em;
+    border-radius: 0.3em;
+    font-weight: 600;
+    color: #5D0E50;
+}
+
+.full-article h2 {
+    font-size: 1.75rem;
+    margin: 1.5em 0 0.5em 0;
+    line-height: 1.3;
+}
+
+.full-article h3 {
+    font-size: 1.35rem;
+    margin: 1.25em 0 0.5em 0;
+    color: #172B4D;
+}
+
+.full-article p {
+    color: #555;
+    margin: 1em 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.full-article blockquote {
+    border-left: 4px solid #5D0E50;
+    margin: 1.5em 0;
+    color: #7c7c7c;
+    font-style: italic;
+    background: #f9f9f9;
+    padding: 1em 1.5em;
+}
+
+.full-article code {
+    background: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 0.3em;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #d73a49;
+}
+
+.full-article pre {
+    background: #f4f4f4;
+    padding: 1em;
+    border-radius: 0.5em;
+    overflow-x: auto;
+    margin: 1.5em 0;
+    border: 1px solid #e0e0e0;
+}
+
+.full-article pre code {
+    background: none;
+    padding: 0;
+    color: #555;
+}
+
+.full-article ul {
+    margin: 1.5em 0;
+    padding-left: 2em;
+    color: #555;
+}
+
+.full-article li {
+    margin: 0.5em 0;
+    line-height: 1.8;
+}
+
+/* ================ 
+    RESPONSIVE MEDIA QUERIES 
+   ================ */
+@media(max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "blog"
+            "sidebar";
+    }
+
+    .blog-sidebar {
+        position: static;
+    }
+
+    .site-header h1 {
+        font-size: 1.75rem;
+    }
+}
