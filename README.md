@@ -111,9 +111,9 @@ That real-world context informs every insight here.
 
 ## 🔗 Quick Links
 
-- **[Home](./https://devroadmapcareer.netlify.app/)** — All essays
-- **[About](./https://devroadmapcareer.netlify.app/about)** — Who I am and why I write this
-- **[Contact](./https://devroadmapcareer.netlify.app/contact)** — Let's work together
+- **[Home](https://devroadmapcareer.netlify.app/)** — All essays
+- **[About](https://devroadmapcareer.netlify.app/about)** — Who I am and why I write this
+- **[Contact](https://devroadmapcareer.netlify.app/contact)** — Let's work together
 - **[LinkedIn](https://www.linkedin.com/in/sheillaolga/)** — Professional updates
 
 ## 💼 Let's Work Together
