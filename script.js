@@ -2,7 +2,7 @@
 const articlesSummaryList = [
   {
     id: "1",
-    date: "Jan 20, 2025",
+    date: "May 20, 2026",
     time: "10 min read",
     title: "Why Technical Founders Fail to Explain Their Products",
     image: "images/future.png",
@@ -11,7 +11,7 @@ const articlesSummaryList = [
   },
   {
     id: "2",
-    date: "Jan 15, 2025",
+    date: "April 15, 2026",
     time: "11 min read",
     title: "Building Value Propositions for Technical Audiences",
     image: "images/value.png",
@@ -20,7 +20,7 @@ const articlesSummaryList = [
   },
   {
     id: "3",
-    date: "Jan 10, 2025",
+    date: "March 10, 2026",
     time: "12 min read",
     title: "The GTM Playbook for Emerging Technologies",
     image: "images/gtm.png",
@@ -29,7 +29,7 @@ const articlesSummaryList = [
   },
   {
     id: "4",
-    date: "Jan 05, 2025",
+    date: "February 05, 2026",
     time: "9 min read",
     title: "Why Your Competitive Analysis is Useless",
     image: "images/competition.png",
@@ -38,7 +38,7 @@ const articlesSummaryList = [
   },
   {
     id: "5",
-    date: "Dec 30, 2024",
+    date: "Dec 30, 2025",
     time: "10 min read",
     title: "Pricing is Positioning",
     image: "images/pricing.png",
@@ -47,7 +47,7 @@ const articlesSummaryList = [
   },
   {
     id: "6",
-    date: "Dec 25, 2024",
+    date: "November 25, 2025",
     time: "11 min read",
     title: "The Hidden Economics of Customer Success",
     image: "images/customer.png",
@@ -56,7 +56,7 @@ const articlesSummaryList = [
   },
   {
     id: "7",
-    date: "Dec 20, 2024",
+    date: "October 20, 2025",
     time: "12 min read",
     title: "When Your GTM Strategy Breaks (And What To Do)",
     image: "images/break.png",
@@ -65,7 +65,7 @@ const articlesSummaryList = [
   },
   {
     id: "8",
-    date: "Dec 15, 2024",
+    date: "September 16, 2025",
     time: "10 min read",
     title: "The PM/Marketing Relationship Nobody Talks About",
     image: "images/relationship.png",

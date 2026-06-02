@@ -5,7 +5,7 @@ const technicalArticles = {
     image: "images/future.png",
     metaDescription:
       "How engineers think vs. how buyers think. The gap that kills good products.",
-    date: "Jan 20, 2025",
+    date: "May 20, 2026",
     readTime: "10 min read",
     level: "All levels",
     toc: [
@@ -18,7 +18,7 @@ const technicalArticles = {
             <header class="article-header">
                 <h1>Why Technical Founders Fail to Explain Their Products</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 20, 2025</span>
+                    <span>📅 May 20, 2026 </span>
                     <span class="reading-time">10 min read</span>
                     <span>✍️ Technical Product Marketing</span>
                 </div>
@@ -69,7 +69,7 @@ const technicalArticles = {
     image: "images/value.png",
     metaDescription:
       "How to win at every level: CFO, CTO, and end users want different things.",
-    date: "Jan 15, 2025",
+    date: "April 15, 2026",
     readTime: "11 min read",
     level: "Product Marketing Managers",
     toc: [
@@ -82,7 +82,7 @@ const technicalArticles = {
             <header class="article-header">
                 <h1>Building Value Propositions for Technical Audiences</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 15, 2025</span>
+                    <span>📅 April 15, 2026</span>
                     <span class="reading-time">11 min read</span>
                     <span>✍️ Go-to-Market Strategy</span>
                 </div>
@@ -143,7 +143,7 @@ For End User:
     image: "images/gtm.png",
     metaDescription:
       "How to go-to-market when you're selling something nobody understands yet.",
-    date: "Jan 10, 2025",
+    date: "March 10, 2026",
     readTime: "12 min read",
     level: "Founders & PMMs",
     toc: [
@@ -156,7 +156,7 @@ For End User:
             <header class="article-header">
                 <h1>The GTM Playbook for Emerging Technologies</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 10, 2025</span>
+                    <span>📅 March 10, 2026</span>
                     <span class="reading-time">12 min read</span>
                     <span>✍️ Go-to-Market Strategy</span>
                 </div>
@@ -206,7 +206,7 @@ For End User:
     image: "images/competition.png",
     metaDescription:
       "Most companies look at competitors. Great companies look at adjacent alternatives.",
-    date: "Jan 05, 2025",
+    date: "February 05, 2026",
     readTime: "9 min read",
     level: "All levels",
     toc: [
@@ -218,7 +218,7 @@ For End User:
             <header class="article-header">
                 <h1>Why Your Competitive Analysis is Useless</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 05, 2025</span>
+                    <span>📅 February 05, 2026</span>
                     <span class="reading-time">9 min read</span>
                     <span>✍️ Competitive Strategy</span>
                 </div>
@@ -262,7 +262,7 @@ For End User:
     image: "images/pricing.png",
     metaDescription:
       "Your pricing strategy reveals your value proposition. Make sure they align.",
-    date: "Dec 30, 2024",
+    date: "Dec 30, 2025",
     readTime: "10 min read",
     level: "Founders & PMMs",
     toc: [
@@ -274,7 +274,7 @@ For End User:
             <header class="article-header">
                 <h1>Pricing is Positioning</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 30, 2024</span>
+                    <span>📅 Dec 30, 2025</span>
                     <span class="reading-time">10 min read</span>
                     <span>✍️ Strategy & Pricing</span>
                 </div>
@@ -322,7 +322,7 @@ For End User:
     image: "images/customer.png",
     metaDescription:
       "Why your post-sale positioning matters more than your pre-sale messaging.",
-    date: "Dec 25, 2024",
+    date: "November 25, 2025",
     readTime: "11 min read",
     level: "Product Marketing Managers",
     toc: [
@@ -334,7 +334,7 @@ For End User:
             <header class="article-header">
                 <h1>The Hidden Economics of Customer Success</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 25, 2024</span>
+                    <span>📅 November 25, 2025</span>
                     <span class="reading-time">11 min read</span>
                     <span>✍️ Customer Success & GTM</span>
                 </div>
@@ -378,7 +378,7 @@ For End User:
     image: "images/break.png",
     metaDescription:
       "Real examples of campaigns that failed. Why they failed. How to fix it.",
-    date: "Dec 20, 2024",
+    date: "October 20, 2025",
     readTime: "12 min read",
     level: "All levels",
     toc: [
@@ -390,7 +390,7 @@ For End User:
             <header class="article-header">
                 <h1>When Your GTM Strategy Breaks (And What To Do)</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 20, 2024</span>
+                    <span>📅 October 20, 2025</span>
                     <span class="reading-time">12 min read</span>
                     <span>✍️ Real GTM Lessons</span>
                 </div>
@@ -442,7 +442,7 @@ For End User:
     image: "images/relationship.png",
     metaDescription:
       "How to build trust between product and marketing when you're the bridge between them.",
-    date: "Dec 15, 2024",
+    date: "September 16, 2025",
     readTime: "10 min read",
     level: "Product & Marketing Leaders",
     toc: [
@@ -454,7 +454,7 @@ For End User:
             <header class="article-header">
                 <h1>The PM/Marketing Relationship Nobody Talks About</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 15, 2024</span>
+                    <span>📅 September 16, 2025</span>
                     <span class="reading-time">10 min read</span>
                     <span>✍️ Team Dynamics</span>
                 </div>
