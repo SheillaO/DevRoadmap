@@ -80,14 +80,9 @@ const sidebarMenuElement = document.getElementById("sidebar-menu");
 
 // 3. Educational execution loop to build up strings on the page container
 articlesSummaryList.forEach(function (post) {
-  // Create preview cards, routing explicitly through article.html?id=X
+  // Create preview cards WITHOUT images for a ultra-clean, minimal index
   const previewCardHtml = `
         <article class="article-preview">
-            <!-- DYNAMIC PREVIEW IMAGE INJECTED HERE -->
-            <div class="preview-card-image-wrapper">
-                <img src="${post.image}" alt="${post.title}" class="preview-card-img">
-            </div>
-            
             <div class="article-meta">
                 <span>📅 ${post.date}</span>
                 <span class="reading-time">⏱️ ${post.time}</span>

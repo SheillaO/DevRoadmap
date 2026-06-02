@@ -1,4 +1,3 @@
-
 /* ================ 
     MINIMAL DESIGN SYSTEM
     Color: #F4F2EE (warm off-white)
@@ -21,6 +20,9 @@ body {
     background: #F4F2EE;
     color: #000000;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ================ TYPOGRAPHY ================ */
@@ -58,28 +60,21 @@ p {
     margin: 1.5rem 0;
 }
 
- a {
+a {
     color: #000000;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
 
-
 a:hover {
     opacity: 0.6;
 }
 
-/* ================ LAYOUT ================ */
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+/* ================ LAYOUT SYSTEM & HEADER ================ */
 
 header {
     background: #F4F2EE;
-    border-bottom: none; /* Removes the horizontal line under the navigation menu */
+    border-bottom: none; 
     padding: 4rem 2rem;
     text-align: center;
     position: sticky;
@@ -103,7 +98,7 @@ nav {
     gap: 3rem;
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: none; /* REMOVED to prevent the double-line effect inside the header */
+    border-top: none; 
 }
 
 nav a {
@@ -120,11 +115,26 @@ nav a:hover {
 
 main {
     flex: 1;
-    max-width: 900px;
+    max-width: 1100px; 
     margin: 0 auto;
     padding: 4rem 2rem;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem; 
+    align-items: start;
 }
+
+#articles-grid {
+    grid-column: 1;
+}
+
+.blog-sidebar {
+    grid-column: 2;
+    position: sticky;
+    top: 120px; /* Bumps it down just enough to sit beautifully below your sticky navigation header */
+}
+
 
 footer {
     background: #000000;
@@ -145,34 +155,10 @@ footer a {
     border-color: #F4F2EE;
 }
 
-/* ================ HOMEPAGE GRID ================ */
-
-main {
-    flex: 1;
-    max-width: 1100px; 
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 4rem; /* Increased spacing between article and sidebar */
-    align-items: start;
-}
-
-#articles-grid {
-    grid-column: 1;
-}
-
-.blog-sidebar {
-    grid-column: 2;
-    position: sticky;
-    top: 180px; /* Keeps your TOC tracking nicely on scroll */
-}
-
-/* ================ ARTICLE PREVIEW CARDS ================ */
+/* ================ HOMEPAGE ARTICLES INDEX (MINIMAL TEXT-ONLY) ================ */
 
 article.article-preview {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid #000000;
 }
 
@@ -187,55 +173,87 @@ article.article-preview:last-child {
     margin-bottom: 1rem;
     display: flex;
     gap: 1rem;
+    color: #666666;
 }
 
 .article-preview h2 {
-    font-size: 1.8rem;
-    margin: 0.5rem 0;
+    font-size: 2rem;
+    margin: 0.5rem 0 1rem 0;
     font-weight: 700;
+    line-height: 1.3;
 }
 
 .article-preview p {
-    margin: 1rem 0;
-    color: #000000;
-    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #333333;
+    font-size: 1.05rem;
+    max-width: 680px; 
 }
 
 .read-more {
     font-size: 0.9rem;
     font-weight: 600;
-    border: none;
+    border-bottom: none !important; 
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* ================ SIDEBAR ================ */
+/* ================ SIDEBAR & NAVIGATION MENUS ================ */
 
 .toc-widget {
-    padding: 2rem 0;
+    padding: 1.5rem;
+    background: #ffffff;             /* Crisp white card backdrop to stand out from off-white */
+    border: 1px solid #000000;       /* Tight black boundary frame matching your system */
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #000000; /* Subtle minimal retro drop-shadow block */
 }
 
 .toc-widget h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0 0 1.5rem 0;
+    letter-spacing: 0.08em;
+    margin: 0 0 1.2rem 0;
+    color: #000000;
+    border-bottom: 1px solid #000000; /* Separator line underneath the widget title */
+    padding-bottom: 0.5rem;
 }
 
-#sidebar-menu {
+#sidebar-menu, #article-toc {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-#sidebar-menu li {
-    margin: 0.8rem 0;
+#sidebar-menu li, #article-toc li {
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0; /* Super fine gray divider lines between links */
 }
 
+#sidebar-menu li:last-child, #article-toc li:last-child {
+    border-bottom: none; /* Strip the divider line off the final item */
+}
 
-
+/* Beautiful interactive layout menu buttons */
 #sidebar-menu a, #article-toc a {
     font-size: 0.85rem;
-    border: none; /* Removes the black lines under sidebar links */
+    font-weight: 500;
+    color: #444444;                  /* Balanced ash-gray for reading comfort */
+    border-bottom: none !important; 
+    text-decoration: none;
     display: block;
-    padding: 0.2rem 0;
+    padding: 0.75rem 0.5rem;          /* Generous clicking target surface */
+    transition: all 0.2s ease-in-out;
 }
+
+/* Hover feedback state makes it clear it's interactive navigation */
+#sidebar-menu a:hover, #article-toc a:hover {
+    color: #000000;
+    background: #F4F2EE;             /* Blends into your main background on focus */
+    padding-left: 0.8rem;            /* Dynamic slide-right animation nudge */
+    opacity: 1;                      /* Keeps full opacity contrast on hover */
+}
+
 
 /* ================ FULL ARTICLE PAGE ================ */
 
@@ -248,6 +266,7 @@ article.article-preview:last-child {
     padding-bottom: 2rem;
     border-bottom: 1px solid #000000;
 }
+
 .article-header h1 {
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
@@ -260,7 +279,13 @@ article.article-preview:last-child {
     letter-spacing: 0.05em;
     display: flex;
     gap: 1.5rem;
-    color: #666666; /* Subtly subdues meta text for premium contrast */
+    color: #666666; 
+}
+
+.article-meta-full a, 
+.article-meta-full span {
+    border-bottom: none !important;
+    text-decoration: none !important;
 }
 
 .full-article h2 {
@@ -288,6 +313,7 @@ article.article-preview:last-child {
     border-radius: 2px;
     font-size: 0.9em;
 }
+
 .full-article pre {
     background: #000000;
     color: #F4F2EE;
@@ -390,30 +416,44 @@ article.article-preview:last-child {
 
 .cta-button:hover {
     opacity: 0.8;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-/* ================ IMAGES (Add Hero Images Here) ================ */
+/* ================ MEDIA MANAGEMENT ================ */
 
 .hero-image {
     width: 100%;
     height: 100%;
-    /* Keeps the whole illustration visible without cropping */
     object-fit: contain; 
-    /* Centers the bear and rabbit in the wrapper */
     object-position: center; 
-    /* Matches the image's white background perfectly */
-    background-color:  #F4F2EE;
+    background-color: #F4F2EE;
 }
 
 .article-image {
-    width: 200px;         /* Uniform circular profile layout size */
+    width: 200px;         
     height: 200px;
-    border-radius: 50%;   /* Transforms it into a perfect circle */
-    object-fit: cover;    /* Prevents face stretching distortions */
+    border-radius: 50%;   
+    object-fit: cover;    
     display: block;
-    margin: 0 auto 3rem auto; /* Centers the circle and drops space below it */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Soft drop shadow */
-    border: 1px solid #000000; /* Minimal fine border detail */
+    margin: 0 auto 3rem auto; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #000000; 
+}
+
+.essay-banner-wrapper {
+    width: 100%;
+    margin-bottom: 3rem;
+    background: transparent;
+}
+
+.essay-hero-graphic {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain; 
+    display: block;
+    margin: 0 auto;
 }
 
 /* ================ RESPONSIVE ================ */
