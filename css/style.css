@@ -120,14 +120,10 @@ nav a:hover {
 
 main {
     flex: 1;
-    max-width: 1100px; 
+    max-width: 900px;
     margin: 0 auto;
     padding: 4rem 2rem;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 4rem; /* Increased spacing between article and sidebar */
-    align-items: start;
 }
 
 footer {
@@ -152,9 +148,14 @@ footer a {
 /* ================ HOMEPAGE GRID ================ */
 
 main {
+    flex: 1;
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 280px;
-    gap: 3rem;
+    gap: 4rem; /* Increased spacing between article and sidebar */
     align-items: start;
 }
 
@@ -165,7 +166,7 @@ main {
 .blog-sidebar {
     grid-column: 2;
     position: sticky;
-    top: 150px;
+    top: 180px; /* Keeps your TOC tracking nicely on scroll */
 }
 
 /* ================ ARTICLE PREVIEW CARDS ================ */
@@ -235,7 +236,7 @@ article.article-preview:last-child {
 /* ================ FULL ARTICLE PAGE ================ */
 
 .full-article {
-    max-width: 700px;
+    width: 100%;
 }
 
 .article-header {
@@ -243,10 +244,10 @@ article.article-preview:last-child {
     padding-bottom: 2rem;
     border-bottom: 1px solid #000000;
 }
-
 .article-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .article-meta-full {
@@ -255,23 +256,25 @@ article.article-preview:last-child {
     letter-spacing: 0.05em;
     display: flex;
     gap: 1.5rem;
+    color: #666666; /* Subtly subdues meta text for premium contrast */
 }
 
 .full-article h2 {
-    font-size: 1.8rem;
-    margin: 2.5rem 0 1rem 0;
+    font-size: 2rem;
+    margin: 3.5rem 0 1.5rem 0;
 }
 
 .full-article h3 {
-    font-size: 1.3rem;
-    margin: 2rem 0 0.8rem 0;
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem 0;
 }
 
 .full-article blockquote {
     border-left: 2px solid #000000;
     padding-left: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     font-style: italic;
+    font-size: 1.1rem;
 }
 
 .full-article code {
@@ -281,7 +284,6 @@ article.article-preview:last-child {
     border-radius: 2px;
     font-size: 0.9em;
 }
-
 .full-article pre {
     background: #000000;
     color: #F4F2EE;
@@ -395,12 +397,15 @@ article.article-preview:last-child {
     background-color:  #F4F2EE;
 }
 
-
-
 .article-image {
-    width: 100%;
-    max-width: 600px;
-    margin: 2rem 0;
+    width: 200px;         /* Uniform circular profile layout size */
+    height: 200px;
+    border-radius: 50%;   /* Transforms it into a perfect circle */
+    object-fit: cover;    /* Prevents face stretching distortions */
+    display: block;
+    margin: 0 auto 3rem auto; /* Centers the circle and drops space below it */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Soft drop shadow */
+    border: 1px solid #000000; /* Minimal fine border detail */
 }
 
 /* ================ RESPONSIVE ================ */
