@@ -1,6 +1,6 @@
 # DevRoadmap: Thought Leadership for Career Growth
 
-DevRoadmap is not a "learning journal" in the traditional sense. It's a **thought leadership platform** designed to showcase deep technical thinking, cross-disciplinary problem-solving. It is a curated collection of essays on **go-to-market strategy, technical product positioning, and building products that matter** — written by someone who has shipped products at P&G, Fintech, Blockchain, and high-growth SaaS.
+DevRoadmap is not a "learning journal" in the traditional sense. It's a **thought leadership platform** designed to showcase deep technical thinking, cross-disciplinary problem-solving. It is a curated collection of essays on **go-to-market strategy, technical product positioning, and building products that matter**, written by someone who has shipped products at P&G, Fintech, Blockchain, and high-growth SaaS.
 
 ## 🎯 What This Is
 
