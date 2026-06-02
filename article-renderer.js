@@ -1,441 +1,495 @@
-// 1. Data library containing the full written pieces for all 8 topics
+// 1. Data library containing 8 Technical Product Marketing essays
 const technicalArticles = {
   1: {
-    title: "Why Your Responsive Design Strategy is Backwards",
+    title: "Why Technical Founders Fail to Explain Their Products",
     metaDescription:
-      "Why responsive design strategy matters more than mobile-first constraints.",
-    date: "Jan 15, 2025",
-    readTime: "8 min read",
-    level: "Beginner to Intermediate",
+      "How engineers think vs. how buyers think. The gap that kills good products.",
+    date: "Jan 20, 2025",
+    readTime: "10 min read",
+    level: "All levels",
     toc: [
-      { anchor: "#problem", label: "The Problem" },
-      { anchor: "#solution", label: "Component-First" },
-      { anchor: "#example", label: "Card Example" },
-      { anchor: "#containers", label: "CSS Containers" },
-      { anchor: "#takeaway", label: "Key Takeaways" },
+      { anchor: "#problem", label: "The Engineer's Curse" },
+      { anchor: "#gap", label: "How Buyers Actually Think" },
+      { anchor: "#framework", label: "The Translation Framework" },
+      { anchor: "#examples", label: "Real Examples" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>Why Your Responsive Design Strategy is Backwards</h1>
+                <h1>Why Technical Founders Fail to Explain Their Products</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 15, 2025</span>
-                    <span class="reading-time">8 min read</span>
-                    <span>✍️ Beginner to Intermediate</span>
+                    <span>📅 Jan 20, 2025</span>
+                    <span class="reading-time">10 min read</span>
+                    <span>✍️ Technical Product Marketing</span>
                 </div>
             </header>
             <section>
-                <h2 id="problem">The Problem With "Mobile-First"</h2>
-                <p>Everyone says "build mobile-first." It's the conventional wisdom. Design for the smallest screen, then scale up. I did this for 2 years.</p>
-                <p>Then I shipped a project for a client, and the desktop experience was... wrong. Not broken. Just wrong.</p>
-                <p>The layout worked. The buttons clicked. The forms submitted. But something felt off. It felt like I was looking at a mobile design stretched to 1440px. Because I was.</p>
-                <blockquote>"Mobile-first is a constraint-based mindset. It forces you to prioritize. But it also forces you to think small first, then extrapolate. That's backwards."</blockquote>
-                
-                <h2 id="solution">What I Should Have Done: Component-First</h2>
-                <p>Instead of "mobile-first," think "component-first."</p>
-                <p>A button is still a button. A card is still a card. A navigation menu is still a menu. But how that button, card, and menu respond to space — that's where strategy matters.</p>
-                
-                <h3 id="example">Example: The Card Component</h3>
-                <p>Here's what I used to do in a reactive, mobile-first approach:</p>
-                <pre><code>.card {
-  width: 100%;
-  padding: 1rem;
-}
-@media (min-width: 768px) {
-  .card { width: 48%; display: inline-block; }
-}</code></pre>
-                <p>Here's what I do now with a proactive component approach. The card asks: "What space do I have?" and the parent handles layout cleanly:</p>
-                <pre><code>.card {
-  padding: 1.5rem;
-  width: 100%;
-}
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}</code></pre>
-                <p>The layout adapts cleanly based on content density thresholds, not arbitrary hardware metrics.</p>
- 
-                <h2 id="containers">The Real Shift: From Breakpoints to Containers</h2>
-                <p>CSS Container Queries change the dynamic entirely. The item controls its own inner appearance rules based on parent element widths rather than global screen viewports.</p>
-                <pre><code>@container (min-width: 500px) {
-  .card {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-}</code></pre>
-                
-                <h2 id="takeaway">What I'm Taking Away</h2>
-                <ul>
-                    <li><strong>Forget standard viewports:</strong> Plan inside micro-bounding layouts.</li>
-                    <li><strong>Lean on auto-fit mechanisms:</strong> Grid tracks provide fluid flexibility effortlessly.</li>
-                    <li><strong>Adopt container metrics early:</strong> This is the future of modular systems design.</li>
-                </ul>
+                <h2 id="problem">The Engineer's Curse</h2>
+                <p>A founder builds something technically brilliant. State-of-the-art architecture. Elegant algorithms. Solves a real problem efficiently.</p>
+                <p>Then they try to explain it to customers.</p>
+                <p>And nothing happens.</p>
+                <p>The pitch is full of technical depth: "We use distributed consensus mechanisms and zero-knowledge proofs to ensure..." The CFO's eyes glaze over. The CTO nods politely. No one pulls out a contract.</p>
+                <blockquote>"The curse of expertise is that you can't imagine what it's like not to know what you know."</blockquote>
+                <p>This happens because engineers and buyers literally think about products differently.</p>
+
+                <h2 id="gap">How Engineers Think vs. How Buyers Think</h2>
+                <p><strong>Engineers ask:</strong> "How does this work? What's the architecture? What are the constraints?"</p>
+                <p><strong>Buyers ask:</strong> "What problem does this solve? How much will it cost? What happens if I use it?"</p>
+                <p>These are fundamentally different questions. A technically perfect answer to the wrong question is useless.</p>
+                <p>I saw this repeatedly at Jamborow and IATBA. We had genuinely innovative Blockchain solutions. The engineering was sound. But our GTM failed until we stopped explaining the technology and started explaining the outcome.</p>
+                <p><strong>We went from:</strong> "Our platform uses smart contracts and DeFi primitives to..." (customer confusion)</p>
+                <p><strong>To:</strong> "This reduces your settlement time from 3 days to 3 minutes, saving you $2M per year." (customer interest)</p>
+
+                <h2 id="framework">The Translation Framework</h2>
+                <p>Here's what works:</p>
+                <ol style="color: var(--text-dark); line-height: 2;">
+                    <li><strong>Start with the outcome, not the technology.</strong> What does the customer's business look like after using you?</li>
+                    <li><strong>Lead with the business impact.</strong> Faster. Cheaper. Safer. Better. Pick one.</li>
+                    <li><strong>Only then explain how.</strong> And keep that explanation simple enough for a non-technical buyer to understand.</li>
+                    <li><strong>Always tie back to ROI.</strong> How much money, time, or risk does this save?</li>
+                </ol>
+                <blockquote>"Your job as a founder isn't to explain your technology. It's to help your customer understand why their business will be better with you."</blockquote>
+
+                <h2 id="examples">Real Example: Fintech</h2>
+                <p><strong>What the founder says:</strong> "We've built a distributed ledger system with real-time settlement capabilities leveraging blockchain consensus mechanisms."</p>
+                <p><strong>What the CFO hears:</strong> "Blah blah blah technical jargon I don't understand."</p>
+                <p><strong>What works:</strong> "We reduce settlement time from T+3 to T+0. That means your capital moves 3 days faster, which for your scale amounts to $2M in improved working capital. It also eliminates 80% of your compliance overhead."</p>
+                <p>Now the CFO is interested. Now they're asking "how does it work?" instead of "why should I care?"</p>
+
+                <h2>The Lesson</h2>
+                <p>The best product positioning I've ever seen came from non-technical founders who hired great product marketers early. Why? Because they had to learn to explain their product to customers from day one.</p>
+                <p>They built clarity into their company culture.</p>
+                <p>Technical founders often skip this step. They assume "good technology sells itself."</p>
+                <p>It doesn't. Clear communication about why customers should care does.</p>
             </section>
         `,
   },
   2: {
-    title: "The Single JavaScript Skill That Separates Juniors from Seniors",
+    title: "Building Value Propositions for Technical Audiences",
     metaDescription:
-      "Mastering the event loop, execution stack, and runtime mechanics.",
-    date: "Jan 22, 2025",
-    readTime: "12 min read",
-    level: "Intermediate to Advanced",
+      "How to win at every level: CFO, CTO, and end users want different things.",
+    date: "Jan 15, 2025",
+    readTime: "11 min read",
+    level: "Product Marketing Managers",
     toc: [
-      { anchor: "#eventloop", label: "The Event Loop" },
-      { anchor: "#confusion", label: "Async Confusion" },
-      { anchor: "#mechanics", label: "Microtasks" },
+      { anchor: "#challenge", label: "The Multi-Buyer Challenge" },
+      { anchor: "#personas", label: "The Three Buyers" },
+      { anchor: "#framework", label: "Building Multi-Level Positioning" },
+      { anchor: "#real", label: "Real Example" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>The Single JavaScript Skill That Separates Juniors from Seniors</h1>
+                <h1>Building Value Propositions for Technical Audiences</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 22, 2025</span>
-                    <span class="reading-time">12 min read</span>
-                    <span>✍️ Intermediate to Advanced</span>
+                    <span>📅 Jan 15, 2025</span>
+                    <span class="reading-time">11 min read</span>
+                    <span>✍️ Go-to-Market Strategy</span>
                 </div>
             </header>
             <section>
-                <h2 id="eventloop">The Fallacy of 'Magic' Frameworks</h2>
-                <p>Junior engineers run straight to modern web UI libraries or framework tools. Senior engineers master the underlying single-threaded execution context of the browser runtime itself. Understanding the Call Stack, Macro-task engine queue, and Web APIs transforms your debugging capabilities entirely.</p>
+                <h2 id="challenge">The Multi-Buyer Challenge</h2>
+                <p>Most technical products have multiple decision-makers. In B2B, you're often selling to:</p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li>The CFO (cares about cost and ROI)</li>
+                    <li>The CTO/Technical Lead (cares about implementation and integration)</li>
+                    <li>The end user (cares about making their job easier)</li>
+                </ul>
+                <p>Each one needs different messaging. Same product, completely different value propositions.</p>
+
+                <h2 id="personas">The Three Buyers</h2>
                 
-                <h2 id="confusion">Real Examples of Async/Await Confusion</h2>
-                <p>Many developers assume that calling <code>async/await</code> transforms synchronous blocking sequences into magic concurrent operations running threads in the background. In reality, it is purely cleaner syntax formatting built to handle non-blocking asynchronous events natively.</p>
-                <pre><code>console.log('Start');
-setTimeout(() => console.log('Timeout'), 0);
-Promise.resolve().then(() => console.log('Promise'));
-console.log('End');</code></pre>
-                <p>A junior engineer struggles to map out the exact code sequence printed here. A senior knows the native engine structure prioritizes micro-task executions (Promises) above general structural timelines (setTimeout) every single run.</p>
-                <p>Output:</p>
-                <pre><code>Start
-End
-Promise
-Timeout</code></pre>
-                <p>Why? Because:</p>
-                <ol style="color: #555; line-height: 1.8;">
-                    <li>Synchronous code runs first (Start, End)</li>
-                    <li>Microtasks (Promises) run after synchronous, before macrotasks</li>
-                    <li>Macrotasks (setTimeout) run last</li>
-                </ol>
- 
-                <h2 id="mechanics">Understanding the Microtask Queue</h2>
-                <p>When you master the underlying mechanics of how engine ticks operate, your architecture becomes clean, resilient, and ready to digest massive amounts of real-time application events without choking UI interactions.</p>
-                <blockquote>The event loop is not magic. It's a predictable, well-defined sequence. Master it, and debugging becomes deduction.</blockquote>
-                <p>Learn this ONE thing, and you'll debug async problems 10x faster than your peers.</p>
+                <h3>The CFO</h3>
+                <p><strong>Cares about:</strong> Cost savings, risk reduction, ROI</p>
+                <p><strong>Speaks in:</strong> Budget, payback period, annual savings</p>
+                <p><strong>Messaging:</strong> "This solution reduces your operational costs by 30%, delivering $2M in savings annually."</p>
+
+                <h3>The CTO</h3>
+                <p><strong>Cares about:</strong> Technical feasibility, integration effort, future-proofing</p>
+                <p><strong>Speaks in:</strong> Architecture, APIs, support, compatibility</p>
+                <p><strong>Messaging:</strong> "REST APIs, supports your existing tech stack, integrates in 2 weeks."</p>
+
+                <h3>The End User</h3>
+                <p><strong>Cares about:</strong> Making their job easier, reducing manual work</p>
+                <p><strong>Speaks in:</strong> Time saved, frustration reduced, workflow improvements</p>
+                <p><strong>Messaging:</strong> "Automates repetitive tasks, saves 10 hours/week, fewer errors."</p>
+
+                <h2 id="framework">Building Multi-Level Positioning</h2>
+                <p>The key is building a single positioning that works for all three, but emphasizes different aspects:</p>
+                <pre><code>Core Value Proposition:
+"Faster, more reliable [outcome] for [audience]"
+
+For CFO:
+"Delivers 30% cost reduction and $2M annual savings"
+
+For CTO:
+"Easy integration via REST API, 2-week implementation"
+
+For End User:
+"Saves 10 hours per week on manual work"</code></pre>
+                <blockquote>"Your value proposition isn't one sentence. It's a framework that flexes based on who's listening."</blockquote>
+
+                <h2 id="real">Real Example: Fintech Platform</h2>
+                <p><strong>The Product:</strong> Blockchain-based settlement system for enterprises</p>
+                <p><strong>For the CFO:</strong> "T+0 settlement reduces working capital requirements by $5M and eliminates 80% of compliance overhead."</p>
+                <p><strong>For the CTO:</strong> "REST APIs, integrates with your existing systems in 2 weeks, managed infrastructure so you don't have to run blockchain nodes."</p>
+                <p><strong>For the end user (operations team):</strong> "Settle transactions immediately instead of waiting 3 days. Spend 5 hours per week on automation instead of manual reconciliation."</p>
+                <p>Same product. Three different value propositions. All true. All compelling to their respective audiences.</p>
             </section>
         `,
   },
   3: {
-    title: "I Built 5 Projects in 6 Months. Here's What Broke Me",
+    title: "The GTM Playbook for Emerging Technologies",
     metaDescription:
-      "A personal retrospective on portfolio strategy vs shallow production shipping.",
-    date: "Dec 05, 2024",
-    readTime: "10 min read",
-    level: "Beginner to Intermediate",
+      "How to go-to-market when you're selling something nobody understands yet.",
+    date: "Jan 10, 2025",
+    readTime: "12 min read",
+    level: "Founders & PMMs",
     toc: [
-      { anchor: "#burnout", label: "The Grind Trap" },
-      { anchor: "#failures", label: "What Actually Broke" },
-      { anchor: "#refactor", label: "The True Lesson" },
+      { anchor: "#problem", label: "The Emerging Tech Problem" },
+      { anchor: "#education", label: "Education Phase" },
+      { anchor: "#conversion", label: "Conversion Phase" },
+      { anchor: "#scale", label: "Scale Phase" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>I Built 5 Projects in 6 Months. Here's What Broke Me</h1>
+                <h1>The GTM Playbook for Emerging Technologies</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 05, 2024</span>
-                    <span class="reading-time">10 min read</span>
-                    <span>✍️ Beginner to Intermediate</span>
+                    <span>📅 Jan 10, 2025</span>
+                    <span class="reading-time">12 min read</span>
+                    <span>✍️ Go-to-Market Strategy</span>
                 </div>
             </header>
             <section>
-                <h2 id="burnout">The Grind Trap</h2>
-                <p>Tutorial culture dictates that code speed and repository quantity prove competence. I challenged myself to build 5 major applications inside six months. The resulting data wasn't an impressive software catalog—it was classic burnout.</p>
-                
-                <h2 id="failures">What Actually Broke</h2>
-                <p>By jumping from project to project, I completely skipped real architectural challenges. I rushed through simple boilerplate steps, avoided difficult schema integrations, and hardcoded authentication hooks. The moment those apps had to support high-throughput operations or advanced relational models, they shattered under deep technical debt.</p>
-                <blockquote>"Building five shallow cloned code bases proves you can copy instructional materials. It does not prove you are ready to engineer robust production applications."</blockquote>
-                <p>What I learned: quantity is a vanity metric. Depth is what matters.</p>
- 
-                <h2 id="refactor">The True Lesson</h2>
-                <p>I stopped building new, superficial apps. Instead, I took a single existing project and spent three full months refactoring its inner database configurations, testing error boundaries, and decoupling brittle utilities. That single structural refactor taught me more about genuine system scaling than all previous build tasks combined.</p>
-                <p>Now, when I build something, I build it once—and I build it right.</p>
+                <h2 id="problem">The Emerging Tech Problem</h2>
+                <p>Blockchain. AI. Quantum. DeFi. Decentralized systems.</p>
+                <p>These are genuinely innovative. But they suffer from a common GTM problem: <strong>your customer doesn't understand the category yet.</strong></p>
+                <p>You can't just launch and expect customers to know they need you. They don't even know the category exists.</p>
+                <p>This is where most emerging tech GTM fails. Companies try to sell before they've educated.</p>
+                <p>I learned this the hard way launching Blockchain solutions at IATBA and Jamborow.</p>
+
+                <h2 id="education">Phase 1: Education (Months 1-6)</h2>
+                <p>Before you try to sell, customers need to understand the opportunity.</p>
+                <p><strong>What works:</strong></p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li><strong>Thought leadership content</strong> — Essays, webinars, reports that explain the category</li>
+                    <li><strong>Industry partnerships</strong> — Work with analyst firms (Gartner, Forrester) to establish credibility</li>
+                    <li><strong>Community building</strong> — Meetups, workshops, events where customers can learn together</li>
+                    <li><strong>Early adopter programs</strong> — Free or heavily discounted access for companies willing to be case studies</li>
+                </ul>
+                <blockquote>"In emerging tech, you're not fighting competitors. You're fighting inertia and misunderstanding."</blockquote>
+
+                <h2 id="conversion">Phase 2: Conversion (Months 6-12)</h2>
+                <p>Once the market understands the opportunity, shift to positioning yourself as the solution.</p>
+                <p><strong>What works:</strong></p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li><strong>Use cases and outcomes</strong> — Stop explaining the technology, start showing results</li>
+                    <li><strong>Case studies</strong> — Real customers, real impact (even from early adopter program)</li>
+                    <li><strong>Sales enablement</strong> — Your sales team needs to be able to explain the business case clearly</li>
+                    <li><strong>Analyst positioning</strong> — Get featured in Gartner reports, analyst rankings</li>
+                </ul>
+
+                <h2 id="scale">Phase 3: Scale (Year 2+)</h2>
+                <p>Once the category is established and you've proven outcomes, scale like any other B2B company.</p>
+                <p>But notice the progression: <strong>Educate → Position → Sell → Scale</strong></p>
+                <p>Most emerging tech companies skip education and go straight to selling. They waste 18 months trying to move deals that will never close because the market isn't ready.</p>
+
+                <h2>The Lesson</h2>
+                <p>Emerging technology requires patience. Your GTM timeline is longer. Your sales cycles are longer. Your customer education burden is higher.</p>
+                <p>But if you build it right—education first, positioning second, selling third—you build a durable competitive advantage. You own the narrative before competitors show up.</p>
             </section>
         `,
   },
   4: {
-    title: "Debugging Responsive Design Without DevTools",
+    title: "Why Your Competitive Analysis is Useless",
     metaDescription:
-      "How to think about interface issues systematically like a detective.",
-    date: "Dec 18, 2024",
+      "Most companies look at competitors. Great companies look at adjacent alternatives.",
+    date: "Jan 05, 2025",
     readTime: "9 min read",
-    level: "Intermediate",
+    level: "All levels",
     toc: [
-      { anchor: "#detective", label: "Detective Mindset" },
-      { anchor: "#overflow", label: "Hunting Horizontal Scroll" },
-      { anchor: "#hardware", label: "Hardware Isolation" },
+      { anchor: "#problem", label: "The Competitor Trap" },
+      { anchor: "#real", label: "What Customers Really Compare" },
+      { anchor: "#framework", label: "Alternative Analysis Framework" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>Debugging Responsive Design Without DevTools</h1>
+                <h1>Why Your Competitive Analysis is Useless</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 18, 2024</span>
+                    <span>📅 Jan 05, 2025</span>
                     <span class="reading-time">9 min read</span>
-                    <span>✍️ Intermediate</span>
+                    <span>✍️ Competitive Strategy</span>
                 </div>
             </header>
             <section>
-                <h2 id="detective">The Simulated Viewport Crutch</h2>
-                <p>Relying exclusively on the artificial phone emulator in browser tools creates a false sense of interface safety. It hides hardware processing quirks, browser layout rendering bugs, and interaction friction points that real devices expose immediately.</p>
-                <p>The DevTools phone simulator is a lie. It tells you things "work" when they actually break on real hardware.</p>
- 
-                <h2 id="overflow">Hunting Horizontal Scroll Layout Pests</h2>
-                <p>When unexpected horizontal page breaks ruin your screen layout bounds, do not apply random styles blindly. Transition into a structural detective and use precise diagnostic rules to isolate overflowing elements instantly:</p>
-                <pre><code>/* The ultimate layout diagnostic rule */
-* {
-  background: rgba(255, 0, 0, 0.1) !important;
-  outline: 1px solid red !important;
-}</code></pre>
-                <p>This colors and outlines every single layout container on your board, making overflowing components visually obvious right away.</p>
-                <p>Once you see the red outline extending past your viewport edge, you've found the culprit. Then you can ask: is it padding? Is it a fixed width? Is it a margin? The outline shows you exactly what's wrong.</p>
- 
-                <h2 id="hardware">Testing Reality</h2>
-                <p>True interface robustness is achieved by sizing viewports iteratively across physical test environments and studying real interactions to ensure rendering engines process structural tracks identically.</p>
-                <p>Borrow a friend's phone. Test on an older device. Test on a tablet. Test with slow 3G network speeds. The DevTools simulator can't replicate what real hardware does under pressure.</p>
-                <p>That's where real bugs live.</p>
+                <h2 id="problem">The Competitor Trap</h2>
+                <p>Most companies build competitive positioning by comparing themselves to other companies in their category.</p>
+                <p>This is a waste of time.</p>
+                <p>Your customer isn't comparing you to your competitors. They're comparing you to the status quo.</p>
+                <p>They're asking: "Should we build this ourselves? Should we hire consultants? Should we do nothing?"</p>
+                <p>Not: "Should we buy from you or from Competitor X?"</p>
+                <blockquote>"Your real competition isn't other software companies. It's inertia."</blockquote>
+
+                <h2 id="real">What Customers Really Compare</h2>
+                <p>When I was at P&G, competitors weren't other diaper brands. Competitors were:</p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li>Not buying premium diapers at all (using cheaper alternatives)</li>
+                    <li>Buying from retailers' private labels (cheaper)</li>
+                    <li>Not seeing doctors (not getting doctor endorsements)</li>
+                </ul>
+                <p>Our positioning wasn't "better than Huggies." It was "paediatrician-recommended, worth the premium."</p>
+                <p>We competed against the status quo and private label, not against Huggies.</p>
+
+                <h2 id="framework">The Alternative Analysis</h2>
+                <p>Instead of competitive analysis, do alternative analysis:</p>
+                <ol style="color: var(--text-dark); line-height: 2;">
+                    <li><strong>What is the customer doing now?</strong> Building it themselves? Using consultants? Doing nothing?</li>
+                    <li><strong>What's the cost of the status quo?</strong> How much are they losing by not solving this?</li>
+                    <li><strong>What would make them change?</strong> What outcome matters enough to justify switching?</li>
+                </ol>
+                <p>Your positioning should answer those questions, not compare feature-by-feature with competitors.</p>
+
+                <h2>The Lesson</h2>
+                <p>Stop building competitive battle cards. Start building an alternative analysis that shows why the status quo is costing them money, time, or opportunity.</p>
+                <p>That's positioning that wins.</p>
             </section>
         `,
   },
   5: {
-    title: "CSS Grid Taught Me How to Think",
+    title: "Pricing is Positioning",
     metaDescription:
-      "How layout rules function as architectural metaphors for system software engineering.",
-    date: "Nov 12, 2024",
-    readTime: "11 min read",
-    level: "Advanced",
+      "Your pricing strategy reveals your value proposition. Make sure they align.",
+    date: "Dec 30, 2024",
+    readTime: "10 min read",
+    level: "Founders & PMMs",
     toc: [
-      { anchor: "#metaphor", label: "The Grid Metaphor" },
-      { anchor: "#predictability", label: "Predictable Frameworks" },
-      { anchor: "#architecture", label: "System Architectures" },
+      { anchor: "#disconnect", label: "The Pricing/Positioning Disconnect" },
+      { anchor: "#signals", label: "What Pricing Signals" },
+      { anchor: "#examples", label: "Real Examples" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>CSS Grid Taught Me How to Think</h1>
+                <h1>Pricing is Positioning</h1>
                 <div class="article-meta-full">
-                    <span>📅 Nov 12, 2024</span>
-                    <span class="reading-time">11 min read</span>
-                    <span>✍️ Advanced</span>
+                    <span>📅 Dec 30, 2024</span>
+                    <span class="reading-time">10 min read</span>
+                    <span>✍️ Strategy & Pricing</span>
                 </div>
             </header>
             <section>
-                <h2 id="metaphor">Layout Rules as Architectural Paradigms</h2>
-                <p>Before grid properties emerged, styling web elements felt like wrestling with broken float paths and loose positioning. CSS Grid introduced structural, declarative design thinking. You map space dimensions up front, and structural tracks align themselves cleanly.</p>
-                <p>This is not just a layout trick. This is a way of thinking that applies everywhere in software.</p>
- 
-                <h2 id="predictability">Embracing Matrix-Based Predictability</h2>
-                <p>When you build explicit templates through properties like <code>grid-template-areas</code>, you write code that mirrors reliable system software routing. It introduces a reliable structural framework where editing layouts happens in one central blueprint place.</p>
-                <pre><code>grid-template-areas:
-  "header header header"
-  "sidebar main main"
-  "footer footer footer";</code></pre>
-                <p>Look at that. The entire layout structure, visualized. One place to understand the whole system. Change the template, everything updates.</p>
-                <blockquote>"Grid taught me that constraints enable clarity. When you define boundaries upfront, everything that happens inside becomes predictable."</blockquote>
- 
-                <h2 id="architecture">Software Engineering Crossover Lessons</h2>
-                <p>This layout methodology completely changed how I organize backend data pipelines. Clean engineering requires setting up explicit structures and contracts early, enabling dynamic contents to travel through smoothly without side effects.</p>
-                <p>It's the same principle: define your grid, define your schema, define your API contract. Then everything else is just data flowing through a structure you've already thought through.</p>
-                <p>Grid didn't teach me CSS. Grid taught me systems thinking.</p>
+                <h2 id="disconnect">The Pricing/Positioning Disconnect</h2>
+                <p>I see this constantly: a company claims their product is premium, enterprise-grade, and worth a premium price.</p>
+                <p>But their pricing is cheap. And their packaging is confusing.</p>
+                <p>The market gets confused. They don't believe the premium positioning. They negotiate you down. They treat you as a commodity.</p>
+                <blockquote>"Your pricing is your positioning. If you price like a commodity, you'll be treated like one."</blockquote>
+
+                <h2 id="signals">What Does Your Pricing Signal?</h2>
+                
+                <h3>Freemium = Commodity</h3>
+                <p>Freemium pricing signals that your product is a commodity. "Use it for free, maybe upgrade someday."</p>
+                <p>This works for consumer tools. It doesn't work for enterprise. It signals you're not confident in your value.</p>
+
+                <h3>Low price per seat = Low value</h3>
+                <p>If you're pricing at $29/month per user, you're positioning yourself as a nice-to-have, not mission-critical.</p>
+                <p>If your product is actually mission-critical (and saves customers $2M annually), your pricing should reflect that.</p>
+
+                <h3>Usage-based pricing = Value-based</h3>
+                <p>When you tie pricing to customer outcomes (usage, customers served, revenue generated), you signal that you care about customer success.</p>
+                <p>You align your revenue with their value.</p>
+
+                <h2 id="examples">Real Example: Jamborow Fintech</h2>
+                <p>We built sophisticated ROI models showing how our platform saved customers $2M+ annually in settlement costs and compliance overhead.</p>
+                <p>But initially, we priced based on number of transactions (transaction-based model).</p>
+                <p>This confused our positioning. We claimed to be premium, but priced like a utility.</p>
+                <p>When we shifted to outcome-based pricing (% of settlement savings), everything clicked:</p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li>Our positioning became clear (we share in your success)</li>
+                    <li>Our sales conversations changed (focused on outcomes, not features)</li>
+                    <li>Our deal values increased (aligned with actual customer value)</li>
+                </ul>
+
+                <h2>The Lesson</h2>
+                <p>If your positioning doesn't match your pricing, your customers will feel the disconnect. They'll negotiate you down, treat you as a commodity, and bounce at the first competitive threat.</p>
+                <p>Get your pricing and positioning aligned. It's one of the highest-leverage moves you can make.</p>
             </section>
         `,
   },
   6: {
-    title: "Why We Should Teach Beginners Systems Thinking Before Syntax",
+    title: "The Hidden Economics of Customer Success",
     metaDescription:
-      "Learning the constraints before learning the abstractions changes everything.",
-    date: "Jan 08, 2025",
-    readTime: "10 min read",
-    level: "Beginner to Intermediate",
+      "Why your post-sale positioning matters more than your pre-sale messaging.",
+    date: "Dec 25, 2024",
+    readTime: "11 min read",
+    level: "Product Marketing Managers",
     toc: [
-      { anchor: "#problem", label: "The Wrong Sequence" },
-      { anchor: "#constraints", label: "Constraints First" },
-      { anchor: "#browser", label: "Understanding the Browser" },
-      { anchor: "#why", label: "Why This Matters" },
+      { anchor: "#insight", label: "The Hidden Truth" },
+      { anchor: "#impact", label: "How This Impacts GTM" },
+      { anchor: "#framework", label: "The Framework" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>Why We Should Teach Beginners Systems Thinking Before Syntax</h1>
+                <h1>The Hidden Economics of Customer Success</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 08, 2025</span>
-                    <span class="reading-time">10 min read</span>
-                    <span>✍️ Beginner to Intermediate</span>
+                    <span>📅 Dec 25, 2024</span>
+                    <span class="reading-time">11 min read</span>
+                    <span>✍️ Customer Success & GTM</span>
                 </div>
             </header>
             <section>
-                <h2 id="problem">The Current Teaching Sequence is Backwards</h2>
-                <p>Here's how most people learn web development:</p>
-                <ol style="color: #555; line-height: 1.9;">
-                    <li>Learn JavaScript syntax: variables, functions, loops</li>
-                    <li>Learn a framework: React, Vue, Svelte</li>
-                    <li>Build something with it</li>
-                    <li>Pray it works</li>
+                <h2 id="insight">The Hidden Truth</h2>
+                <p>At Catalyst Marketing Lab, I realized something that changed how I approach positioning:</p>
+                <p><strong>Your expansion revenue is determined by how well your customer success team communicates value, not how well your sales team sold it.</strong></p>
+                <p>We have customers paying us $10K/month. Six months in, they barely understand what they're paying for. Our sales team oversold the features, undersold the outcomes.</p>
+                <p>So our customer success team spends the first 3 months translating: "Here's what you actually bought. Here's the value you're actually getting."</p>
+                <p>This is wasteful. And it's a positioning problem.</p>
+
+                <h2 id="impact">How This Impacts GTM</h2>
+                <p>If your positioning is misaligned with actual customer outcomes, your customer success becomes a liability:</p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li>Customer expects feature X, you promised feature Y</li>
+                    <li>Customer expected $500K in savings, you deliver $200K</li>
+                    <li>Customer expected fast implementation, it takes 4 months</li>
+                </ul>
+                <p>When expectations don't match reality, customers don't renew. They don't expand.</p>
+                <blockquote>"Your customer success team's job should be delivering value, not managing expectations you created in sales."</blockquote>
+
+                <h2 id="framework">Building Positioning for Retention</h2>
+                <p>The question is: how do you build positioning that's both compelling enough to sell AND accurate enough that customer success can deliver on it?</p>
+                <ol style="color: var(--text-dark); line-height: 2;">
+                    <li><strong>Under-promise on features, over-deliver on outcomes.</strong> Don't list every feature. Focus on the outcome you can reliably deliver.</li>
+                    <li><strong>Set clear expectations in the sales process.</strong> Timeline, implementation effort, expected results. Be honest.</li>
+                    <li><strong>Let customer success own the outcome narrative.</strong> Don't hand off leads to CS. Hand off partnerships.</li>
+                    <li><strong>Build a feedback loop.</strong> Listen to CS about what customers actually want. Update your positioning based on reality.</li>
                 </ol>
-                <p>This sequence assumes the framework is transparent. It's not.</p>
-                <p>What actually happens is you spend months writing code that feels magical. You don't understand why <code>useEffect</code> runs twice in development. You don't know why your CSS breaks on mobile. You don't comprehend how the browser actually renders HTML.</p>
-                <p>You become fluent in syntax before you understand systems. That's backwards.</p>
- 
-                <h2 id="constraints">Learning Through Constraints</h2>
-                <p>Here's a better sequence:</p>
-                <ol style="color: #555; line-height: 1.9;">
-                    <li><strong>Understand HTTP:</strong> How does data actually travel from server to browser?</li>
-                    <li><strong>Understand the DOM:</strong> What is HTML? What happens when the browser parses it?</li>
-                    <li><strong>Understand the rendering pipeline:</strong> Paint, layout, composite—what actually happens on screen?</li>
-                    <li><strong>Understand event loops:</strong> How does JavaScript execute? When does it block?</li>
-                    <li><strong>THEN</strong> learn a framework</li>
-                </ol>
-                <p>When you understand the constraints first, the framework isn't magic anymore. It's a tool that works *with* those constraints.</p>
- 
-                <h2 id="browser">A Concrete Example: The Browser Rendering Pipeline</h2>
-                <p>Most beginners don't know that when they write CSS, they're triggering specific browser operations:</p>
-                <pre><code>// This triggers a full layout recalculation
-element.style.width = '100%';
- 
-// This triggers a repaint
-element.style.color = 'red';
- 
-// This is cheap
-element.style.transform = 'translate(10px)';
-</code></pre>
-                <p>Understanding *why* the third line is faster changes how you write everything after. You stop cargo-culting performance patterns and start understanding trade-offs.</p>
-                <blockquote>"When you learn the system first, you write code that works *with* the constraints, not against them."</blockquote>
- 
-                <h2 id="why">Why Most Teaching Gets This Wrong</h2>
-                <p>Frameworks are fun. Seeing something appear on screen is gratifying. So teachers lead with the fun part—the framework—and save the "boring" systems stuff for later.</p>
-                <p>But that's like teaching someone to drive by putting them in a Formula 1 car on a racetrack before they understand how steering works.</p>
-                <p>Start with boring. Start with constraints. Start with understanding how the system actually works.</p>
-                <p>That's when coding becomes engineering.</p>
+
+                <h2>The Lesson</h2>
+                <p>Great GTM isn't about winning deals. It's about winning customers who stay, expand, and refer.</p>
+                <p>That only happens if your positioning aligns with what you can actually deliver.</p>
+                <p>Work with your customer success team early. Make sure they believe your positioning. Make sure they can deliver on it.</p>
             </section>
         `,
   },
   7: {
-    title: "What My Previous Career Taught Me About Technical Debt",
+    title: "When Your GTM Strategy Breaks (And What To Do)",
     metaDescription:
-      "Systems thinking from outside tech applies directly to software architecture.",
-    date: "Jan 01, 2025",
-    readTime: "11 min read",
-    level: "Intermediate to Advanced",
+      "Real examples of campaigns that failed. Why they failed. How to fix it.",
+    date: "Dec 20, 2024",
+    readTime: "12 min read",
+    level: "All levels",
     toc: [
-      { anchor: "#parallel", label: "The Parallel" },
-      { anchor: "#examples", label: "Real Examples" },
-      { anchor: "#wisdom", label: "The Wisdom Transfer" },
+      { anchor: "#reality", label: "GTM Failures Are Normal" },
+      { anchor: "#cases", label: "Real Breakages" },
+      { anchor: "#fix", label: "How To Fix It" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>What My Previous Career Taught Me About Technical Debt</h1>
+                <h1>When Your GTM Strategy Breaks (And What To Do)</h1>
                 <div class="article-meta-full">
-                    <span>📅 Jan 01, 2025</span>
-                    <span class="reading-time">11 min read</span>
-                    <span>✍️ Intermediate to Advanced</span>
+                    <span>📅 Dec 20, 2024</span>
+                    <span class="reading-time">12 min read</span>
+                    <span>✍️ Real GTM Lessons</span>
                 </div>
             </header>
             <section>
-                <h2 id="parallel">The Parallel Nobody Talks About</h2>
-                <p>Coming into tech from a non-technical background gives you an unusual advantage: you've already mastered systems thinking in another domain.</p>
-                <p>Technical debt feels like a software problem. But it's actually an organizational problem—the same kind every complex system faces.</p>
-                <p>My previous field taught me that.</p>
- 
-                <h2 id="examples">When Systems Break (Real Examples)</h2>
-                <p>In [YOUR PREVIOUS FIELD]:</p>
-                <ul style="color: #555; line-height: 1.9;">
-                    <li>Organizations that ignore maintenance end up with catastrophic failures</li>
-                    <li>Cutting corners today costs 10x more tomorrow</li>
-                    <li>Shortcuts that seem fast initially become anchors</li>
-                    <li>The cost compounds—you pay interest, not just principal</li>
-                </ul>
-                <p>The same dynamics exist in codebases.</p>
-                <p>When you hardcode authentication hooks (shortcut), you think you've saved 2 hours. But when the API changes, every module breaks. You've just created a hidden dependency that costs 20 hours to refactor.</p>
-                <blockquote>"Technical debt is called 'debt' because it has interest. Every day you carry it, the cost grows."</blockquote>
- 
-                <h2 id="wisdom">The Wisdom That Transfers</h2>
-                <p>My previous field taught me three principles that apply perfectly to software:</p>
+                <h2 id="reality">GTM Failures Are Normal</h2>
+                <p>Every GTM strategy breaks at some point. The question isn't whether yours will. It's when, and how quickly you can fix it.</p>
+                <p>I've had campaigns fail spectacularly. Not because we didn't work hard. But because our assumptions were wrong.</p>
+
+                <h2 id="cases">Real Examples of Breakage</h2>
                 
-                <h3>1. Small consistent maintenance beats emergency repairs</h3>
-                <p>In [YOUR FIELD], the systems that survived were the ones maintained regularly. The ones that cut corners on upkeep failed suddenly and catastrophically.</p>
-                <p>Same with code. A codebase that refactors continuously stays healthy. One that ignores tech debt eventually becomes unmaintainable.</p>
- 
-                <h3>2. Transparency about shortcuts creates accountability</h3>
-                <p>The best organizations I worked with were transparent: "We're taking this shortcut to hit deadline X, but we're documenting it and committing to fix it by date Y."</p>
-                <p>Teams that hide shortcuts, or pretend they don't exist, are the ones buried in unmaintainable code.</p>
- 
-                <h3>3. Invest in the foundation, not the decoration</h3>
-                <p>Resources follow visibility. The visible features get attention. The unsexy foundation work gets deferred.</p>
-                <p>But the foundation determines whether the whole thing survives.</p>
- 
-                <p>Teams that invest in their foundational architecture—testing, documentation, clean dependencies—compound over time. Ones that chase features become fragile.</p>
- 
-                <h2>The Real Takeaway</h2>
-                <p>Coming from another field isn't a liability. It's a lens. You've already seen how complex systems break. You know what healthy systems look like. You understand that shortcuts have costs.</p>
-                <p>Apply that knowledge to code, and you'll write software that lasts.</p>
+                <h3>Case 1: Positioning for the Wrong Buyer</h3>
+                <p><strong>The campaign:</strong> We positioned our blockchain platform for "Finance Directors."</p>
+                <p><strong>The assumption:</strong> Finance directors make settlement decisions.</p>
+                <p><strong>Reality:</strong> Operations heads and CTOs make the decision. Finance approved it after the fact.</p>
+                <p><strong>The cost:</strong> 6 months of messaging that reached the wrong buyer, zero pipeline.</p>
+                <p><strong>The fix:</strong> Flipped our messaging to address operations and technical concerns. Pipeline grew 3x in the next month.</p>
+
+                <h3>Case 2: Outcome Promises We Couldn't Deliver</h3>
+                <p><strong>The campaign:</strong> We promised "30% cost reduction within 6 months."</p>
+                <p><strong>The assumption:</strong> Customers could implement fast and realize savings quickly.</p>
+                <p><strong>Reality:</strong> Implementation took 4 months. Savings took 8 months to materialize.</p>
+                <p><strong>The cost:</strong> Unhappy customers, delayed renewals, negative word of mouth.</p>
+                <p><strong>The fix:</strong> Updated messaging to promise "30% cost reduction within 12 months." Moved implementation expectations to the sales conversation. Customer satisfaction increased.</p>
+
+                <h3>Case 3: Competing Against the Wrong Alternative</h3>
+                <p><strong>The campaign:</strong> We positioned against Competitor X.</p>
+                <p><strong>The assumption:</strong> Customers would choose between us and Competitor X.</p>
+                <p><strong>Reality:</strong> Most customers chose "build it ourselves" or "do nothing."</p>
+                <p><strong>The cost:</strong> We were winning comparison battles but losing the main decision (to build vs. buy).</p>
+                <p><strong>The fix:</strong> Shifted positioning from "better than Competitor X" to "better than building it yourself." Messaging moved from features to implementation timelines and expertise.</p>
+
+                <h2 id="fix">How To Fix Broken GTM</h2>
+                <ol style="color: var(--text-dark); line-height: 2;">
+                    <li><strong>Diagnose the real problem.</strong> Is it the buyer? The message? The channel? The offer?</li>
+                    <li><strong>Test a small change.</strong> Don't overhaul everything. Change one variable and measure.</li>
+                    <li><strong>Talk to customers.</strong> Especially the ones who said no. Why did they pass?</li>
+                    <li><strong>Iterate quickly.</strong> If the change works, scale it. If not, try something else.</li>
+                </ol>
+
+                <h2>The Lesson</h2>
+                <p>GTM is not a one-time strategy. It's a continuous learning process. Your first positioning will be wrong. Your first buyer persona will be wrong. Your first messaging will be wrong.</p>
+                <p>The winners are the ones who figure it out fastest and iterate relentlessly.</p>
             </section>
         `,
   },
   8: {
-    title: "The Portfolio Myth: Why Project Count Doesn't Matter",
+    title: "The PM/Marketing Relationship Nobody Talks About",
     metaDescription:
-      "Recruiters don't count your GitHub repos. They care about what you think.",
-    date: "Dec 28, 2024",
-    readTime: "9 min read",
-    level: "Beginner to Intermediate",
+      "How to build trust between product and marketing when you're the bridge between them.",
+    date: "Dec 15, 2024",
+    readTime: "10 min read",
+    level: "Product & Marketing Leaders",
     toc: [
-      { anchor: "#myth", label: "The Myth" },
-      { anchor: "#reality", label: "What Recruiters Actually Care About" },
-      { anchor: "#proof", label: "Proof is in Thinking" },
-      { anchor: "#actionable", label: "What To Do Instead" },
+      { anchor: "#tension", label: "The Natural Tension" },
+      { anchor: "#problems", label: "Where It Breaks" },
+      { anchor: "#solution", label: "Building Trust" },
     ],
     bodyHtml: `
             <header class="article-header">
-                <h1>The Portfolio Myth: Why Project Count Doesn't Matter</h1>
+                <h1>The PM/Marketing Relationship Nobody Talks About</h1>
                 <div class="article-meta-full">
-                    <span>📅 Dec 28, 2024</span>
-                    <span class="reading-time">9 min read</span>
-                    <span>✍️ Beginner to Intermediate</span>
+                    <span>📅 Dec 15, 2024</span>
+                    <span class="reading-time">10 min read</span>
+                    <span>✍️ Team Dynamics</span>
                 </div>
             </header>
             <section>
-                <h2 id="myth">The Lie We Tell Junior Developers</h2>
-                <p>Build more projects. Quantity builds your portfolio. Make 10 projects and you'll get hired.</p>
-                <p>This is a lie.</p>
-                <p>I've seen junior developers with 15 GitHub repos get rejected, and juniors with 2 repos get offers from FAANG companies.</p>
-                <p>The difference? One person had *opinions about their code*. The other had code that followed tutorials.</p>
- 
-                <h2 id="reality">What Recruiters Are Actually Looking For</h2>
-                <p>When a senior engineer looks at your portfolio, they're asking:</p>
-                <blockquote>"What does this person think about?"</blockquote>
-                <p>Not: "How many things did they build?"</p>
-                <p>Not: "Can they follow a tutorial?"</p>
-                <p>Not: "How shiny is their GitHub?"</p>
-                <p>They're asking: <strong>Does this person think differently?</strong></p>
- 
-                <h2 id="proof">Proof is in Thinking, Not Building</h2>
-                <p>A 50-line article about why mobile-first design is incomplete tells a recruiter more than 5 GitHub repos with boilerplate code.</p>
-                <p>Why?</p>
-                <ol style="color: #555; line-height: 1.9;">
-                    <li>It shows you *notice* problems most people miss</li>
-                    <li>It shows you can *articulate* complex ideas</li>
-                    <li>It shows you have *conviction*—you believe something and can defend it</li>
-                    <li>It shows you *think*, not just execute</li>
-                </ol>
-                <p>A recruiter reading that article thinks: "This person understands systems. This person would be good in a code review. This person asks 'why?' instead of just accepting convention."</p>
-                <p>Those are the people they hire.</p>
- 
-                <h2 id="actionable">What To Do Instead</h2>
-                <p>Stop counting projects. Start collecting insights.</p>
-                <p>For every project you build, ask yourself:</p>
-                <ul style="color: #555; line-height: 1.9;">
-                    <li>What did I learn that surprised me?</li>
-                    <li>What broke my assumptions?</li>
-                    <li>What would I do differently next time?</li>
-                    <li>What problem did this solve in an unusual way?</li>
+                <h2 id="tension">The Natural Tension</h2>
+                <p>Product teams and marketing teams have fundamentally different incentives.</p>
+                <p><strong>Product cares about:</strong> Building the right thing, long-term vision, technical excellence</p>
+                <p><strong>Marketing cares about:</strong> Making revenue now, narrative consistency, messaging clarity</p>
+                <p>These don't always align. And when they don't, GTM breaks.</p>
+
+                <h2 id="problems">Where It Breaks</h2>
+                
+                <h3>Product releases something that doesn't fit the narrative</h3>
+                <p>Product built a great feature. But it doesn't fit your positioning. Marketing has to either:</p>
+                <ul style="color: var(--text-dark); line-height: 1.9;">
+                    <li>Force it into messaging (awkward, confusing)</li>
+                    <li>Ignore it (product feels unheard)</li>
+                    <li>Change positioning (undermines everything we've built)</li>
                 </ul>
-                <p>Write about those insights. Share them. Defend them.</p>
-                <p>That's a portfolio that gets you hired.</p>
-                <p>Not the project count. The thinking.</p>
+
+                <h3>Marketing wants to pivot positioning</h3>
+                <p>Marketing learns that the actual buyer is different than we thought. So we need to change positioning.</p>
+                <p>Product resists because they built features for the original persona. Changing positioning feels like rejecting their work.</p>
+
+                <h3>Timeline misalignment</h3>
+                <p>Product is building roadmap for 12 months from now. Marketing needs to commit to messaging for next quarter.</p>
+                <p>Nobody knows what's actually coming, so nobody trusts what anyone says.</p>
+
+                <h2 id="solution">Building Real Trust</h2>
+                <ol style="color: var(--text-dark); line-height: 2;">
+                    <li><strong>Involve marketing in product planning early.</strong> Not at the launch planning stage. At the roadmap stage. Let marketing understand why product is building what it's building.</li>
+                    <li><strong>Involve product in positioning decisions.</strong> Don't build messaging in isolation. Show product team the customer research, the buyer insights, the positioning framework.</li>
+                    <li><strong>Share a single source of truth.</strong> "Here's what we're telling the market." Both teams agree. Both teams commit.</li>
+                    <li><strong>Create a feedback loop.</strong> Marketing learns from customers. Product learns from customer feedback. Share it both directions.</li>
+                    <li><strong>Build the relationship, not just the process.</strong> Go for coffee. Understand each other's constraints. Find common ground.</li>
+                </ol>
+
+                <blockquote>"The best PMM/PM relationships I've seen are where both teams understand that their success depends on each other."</blockquote>
+
+                <h2>The Lesson</h2>
+                <p>Product and marketing teams don't have to be at odds. But they require intentional, ongoing communication to stay aligned.</p>
+                <p>When they are aligned, you ship products that customers understand and want. When they're not, you ship products to radio silence.</p>
             </section>
         `,
   },
@@ -457,7 +511,7 @@ if (articleId && technicalArticles[articleId]) {
 
   // Inject core contents, head title tags, and page metadata strings
   contentTarget.innerHTML = article.bodyHtml;
-  titleTarget.innerText = `${article.title} - DevRoadmap`;
+  titleTarget.innerText = `${article.title} - Technical Product Marketing Insights`;
   metaTarget.setAttribute("content", article.metaDescription);
 
   // Dynamically build the page table of contents menu
