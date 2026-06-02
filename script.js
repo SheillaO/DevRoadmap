@@ -1,51 +1,79 @@
-// 1. Structural information array for the 5 dashboard previews
+// 1. Structural information array for the 8 article previews
 const articlesSummaryList = [
-    {
-        id: "1",
-        date: "Jan 15, 2025",
-        time: "8 min read",
-        title: "Why Your Responsive Design Strategy is Backwards",
-        excerpt: "Most developers learn mobile-first, but think component-first. Here's why that distinction matters and how it changed my entire approach to building interfaces."
-    },
-    {
-        id: "2",
-        date: "Jan 22, 2025",
-        time: "12 min read",
-        title: "The Single JavaScript Skill That Separates Juniors from Seniors",
-        excerpt: "It's not frameworks. It's not libraries. It's understanding how JavaScript actually executes. This one concept changed my debugging forever."
-    },
-    {
-        id: "3",
-        date: "Dec 05, 2024",
-        time: "10 min read",
-        title: "I Built 5 Projects in 6 Months. Here's What Broke Me (And How I Fixed It)",
-        excerpt: "Portfolio building isn't about quantity. It's about learning from each failure. Here's my framework for turning shipped projects into real growth."
-    },
-    {
-        id: "4",
-        date: "Dec 18, 2024",
-        time: "9 min read",
-        title: "Debugging Responsive Design Without DevTools",
-        excerpt: "Your browser's DevTools is a crutch. Here's how to debug responsive issues like a detective, not a tool-user."
-    },
-    {
-        id: "5",
-        date: "Nov 12, 2024",
-        time: "11 min read",
-        title: "CSS Grid Taught Me How to Think",
-        excerpt: "CSS Grid isn't just a layout tool. It's a mental model for problem-solving. How learning layout changed how I architect systems."
-    }
+  {
+    id: "1",
+    date: "Jan 20, 2025",
+    time: "10 min read",
+    title: "Why Technical Founders Fail to Explain Their Products",
+    excerpt:
+      "How engineers think vs. how buyers think. The gap that kills good products — and how to bridge it.",
+  },
+  {
+    id: "2",
+    date: "Jan 15, 2025",
+    time: "11 min read",
+    title: "Building Value Propositions for Technical Audiences",
+    excerpt:
+      "The CFO, CTO, and end user all want different things. Here's how to win with one value proposition.",
+  },
+  {
+    id: "3",
+    date: "Jan 10, 2025",
+    time: "12 min read",
+    title: "The GTM Playbook for Emerging Technologies",
+    excerpt:
+      "How to go-to-market when you're selling something nobody understands yet. (Spoiler: educate before you sell.)",
+  },
+  {
+    id: "4",
+    date: "Jan 05, 2025",
+    time: "9 min read",
+    title: "Why Your Competitive Analysis is Useless",
+    excerpt:
+      "Your customers aren't comparing you to competitors. They're comparing you to the status quo. Here's why that changes everything.",
+  },
+  {
+    id: "5",
+    date: "Dec 30, 2024",
+    time: "10 min read",
+    title: "Pricing is Positioning",
+    excerpt:
+      "Your pricing strategy reveals your value proposition. Make sure they align, or watch your deals collapse.",
+  },
+  {
+    id: "6",
+    date: "Dec 25, 2024",
+    time: "11 min read",
+    title: "The Hidden Economics of Customer Success",
+    excerpt:
+      "Why your post-sale positioning matters more than your pre-sale messaging. And how it impacts expansion revenue.",
+  },
+  {
+    id: "7",
+    date: "Dec 20, 2024",
+    time: "12 min read",
+    title: "When Your GTM Strategy Breaks (And What To Do)",
+    excerpt:
+      "Real examples of campaigns that failed. Why they failed. How to fix it and iterate toward product-market fit.",
+  },
+  {
+    id: "8",
+    date: "Dec 15, 2024",
+    time: "10 min read",
+    title: "The PM/Marketing Relationship Nobody Talks About",
+    excerpt:
+      "How product and marketing teams break alignment — and how to build trust so you actually ship great products together.",
+  },
 ];
 
 // 2. Fetch the target layout injection elements
-const articlesGridElement = document.getElementById('articles-grid');
-const sidebarMenuElement = document.getElementById('sidebar-menu');
+const articlesGridElement = document.getElementById("articles-grid");
+const sidebarMenuElement = document.getElementById("sidebar-menu");
 
 // 3. Educational execution loop to build up strings on the page container
-articlesSummaryList.forEach(function(post) {
-    
-    // Create preview cards, routing explicitly through article.html?id=X
-    const previewCardHtml = `
+articlesSummaryList.forEach(function (post) {
+  // Create preview cards, routing explicitly through article.html?id=X
+  const previewCardHtml = `
         <article class="article-preview">
             <div class="article-meta">
                 <span>📅 ${post.date}</span>
@@ -56,13 +84,13 @@ articlesSummaryList.forEach(function(post) {
             <a href="article.html?id=${post.id}" class="read-more">Read Article →</a>
         </article>
     `;
-    
-    // Create matching scannable links for the landing index sidebar
-    const quickNavLinkHtml = `
+
+  // Create matching scannable links for the landing index sidebar
+  const quickNavLinkHtml = `
         <li><a href="article.html?id=${post.id}">${post.title}</a></li>
     `;
-    
-    // Append the text block segments into your DOM containers safely
-    articlesGridElement.innerHTML += previewCardHtml;
-    sidebarMenuElement.innerHTML += quickNavLinkHtml;
+
+  // Append the text block segments into your DOM containers safely
+  articlesGridElement.innerHTML += previewCardHtml;
+  sidebarMenuElement.innerHTML += quickNavLinkHtml;
 });
