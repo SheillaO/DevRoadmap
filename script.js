@@ -74,13 +74,13 @@ const articlesSummaryList = [
   },
 ];
 
-// 2. Fetch the target layout injection elements
+
 const articlesGridElement = document.getElementById("articles-grid");
 const sidebarMenuElement = document.getElementById("sidebar-menu");
 
-// 3. Educational execution loop to build up strings on the page container
+
 articlesSummaryList.forEach(function (post) {
-  // Create preview cards WITHOUT images for a ultra-clean, minimal index
+  
   const previewCardHtml = `
         <article class="article-preview">
             <div class="article-meta">
@@ -93,12 +93,12 @@ articlesSummaryList.forEach(function (post) {
         </article>
     `;
 
-  // Create matching scannable links for the landing index sidebar
+  
   const quickNavLinkHtml = `
         <li><a href="article.html?id=${post.id}">${post.title}</a></li>
     `;
 
-  // Append the text block segments into your DOM containers safely
+  
   articlesGridElement.innerHTML += previewCardHtml;
   sidebarMenuElement.innerHTML += quickNavLinkHtml;
 });
