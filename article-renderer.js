@@ -2,6 +2,7 @@
 const technicalArticles = {
   1: {
     title: "Why Technical Founders Fail to Explain Their Products",
+    image: "images/future.png",
     metaDescription:
       "How engineers think vs. how buyers think. The gap that kills good products.",
     date: "Jan 20, 2025",
@@ -65,6 +66,7 @@ const technicalArticles = {
   },
   2: {
     title: "Building Value Propositions for Technical Audiences",
+    image: "images/value.png",
     metaDescription:
       "How to win at every level: CFO, CTO, and end users want different things.",
     date: "Jan 15, 2025",
@@ -138,6 +140,7 @@ For End User:
   },
   3: {
     title: "The GTM Playbook for Emerging Technologies",
+    image: "images/gtm.png",
     metaDescription:
       "How to go-to-market when you're selling something nobody understands yet.",
     date: "Jan 10, 2025",
@@ -200,6 +203,7 @@ For End User:
   },
   4: {
     title: "Why Your Competitive Analysis is Useless",
+    image: "images/competition.png",
     metaDescription:
       "Most companies look at competitors. Great companies look at adjacent alternatives.",
     date: "Jan 05, 2025",
@@ -255,6 +259,7 @@ For End User:
   },
   5: {
     title: "Pricing is Positioning",
+    image: "images/pricing.png",
     metaDescription:
       "Your pricing strategy reveals your value proposition. Make sure they align.",
     date: "Dec 30, 2024",
@@ -314,6 +319,7 @@ For End User:
   },
   6: {
     title: "The Hidden Economics of Customer Success",
+    image: "images/customer.png",
     metaDescription:
       "Why your post-sale positioning matters more than your pre-sale messaging.",
     date: "Dec 25, 2024",
@@ -369,6 +375,7 @@ For End User:
   },
   7: {
     title: "When Your GTM Strategy Breaks (And What To Do)",
+    image: "images/break.png",
     metaDescription:
       "Real examples of campaigns that failed. Why they failed. How to fix it.",
     date: "Dec 20, 2024",
@@ -432,6 +439,7 @@ For End User:
   },
   8: {
     title: "The PM/Marketing Relationship Nobody Talks About",
+    image: "images/relationship.png",
     metaDescription:
       "How to build trust between product and marketing when you're the bridge between them.",
     date: "Dec 15, 2024",
@@ -509,8 +517,14 @@ const metaTarget = document.getElementById("meta-description");
 if (articleId && technicalArticles[articleId]) {
   const article = technicalArticles[articleId];
 
-  // Inject core contents, head title tags, and page metadata strings
-  contentTarget.innerHTML = article.bodyHtml;
+  // UPDATED LINE: Pulls the unique graphic for this essay instead of your profile photo
+  contentTarget.innerHTML = `
+    <div class="essay-banner-wrapper">
+        <img src="${article.image}" alt="${article.title}" class="essay-hero-graphic">
+    </div>
+    ${article.bodyHtml}
+  `;
+  
   titleTarget.innerText = `${article.title} - Technical Product Marketing Insights`;
   metaTarget.setAttribute("content", article.metaDescription);
 
@@ -532,3 +546,4 @@ if (articleId && technicalArticles[articleId]) {
   document.getElementById("toc-title").innerText = "⚠️ Error";
   tocTarget.innerHTML = `<li><a href="index.html">Back Home</a></li>`;
 }
+

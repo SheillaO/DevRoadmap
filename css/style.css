@@ -58,12 +58,12 @@ p {
     margin: 1.5rem 0;
 }
 
-a {
+ a {
     color: #000000;
     text-decoration: none;
-    border-bottom: 1px solid #000000;
     transition: opacity 0.3s ease;
 }
+
 
 a:hover {
     opacity: 0.6;
@@ -79,7 +79,7 @@ body {
 
 header {
     background: #F4F2EE;
-    border-bottom: 1px solid #000000;
+    border-bottom: none; /* Removes the horizontal line under the navigation menu */
     padding: 4rem 2rem;
     text-align: center;
     position: sticky;
@@ -103,7 +103,7 @@ nav {
     gap: 3rem;
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid #000000;
+    border-top: none; /* REMOVED to prevent the double-line effect inside the header */
 }
 
 nav a {
@@ -228,9 +228,13 @@ article.article-preview:last-child {
     margin: 0.8rem 0;
 }
 
-#sidebar-menu a {
+
+
+#sidebar-menu a, #article-toc a {
     font-size: 0.85rem;
-    border: none;
+    border: none; /* Removes the black lines under sidebar links */
+    display: block;
+    padding: 0.2rem 0;
 }
 
 /* ================ FULL ARTICLE PAGE ================ */
@@ -305,6 +309,10 @@ article.article-preview:last-child {
 
 .full-article li {
     margin: 0.5rem 0;
+}
+
+.full-article p a, .page-content p a {
+    border-bottom: 1px solid #000000;
 }
 
 /* ================ PAGES (ABOUT/CONTACT) ================ */
